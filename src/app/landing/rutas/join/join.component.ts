@@ -30,9 +30,9 @@ export class JoinComponent {
 
   constructor(private fb:FormBuilder, private landingService: LandingService, private seo:SeoService) {
 
-    afterRender(() => {
-      window.scroll(0,0)
-    })
+    // afterRender(() => {
+    //   window.scroll(0,0)
+    // })
 
     this.seo.actualizarTitulo('Unete al equipo')
     this.seo.generateTags({
