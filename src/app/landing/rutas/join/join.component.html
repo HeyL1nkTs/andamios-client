@@ -1,5 +1,5 @@
 <div class="contenedor" [@fadeIn]>
-  <div class="title">¡Sé parte de la Familia Andamios Atlas!</div>
+  <h1 class="title">¡Sé parte de la Familia Andamios Atlas!</h1>
   <div class="subtitle">EQUIPO ATLAS</div>
   <div class="description">
     Somos un equipo de gente talentosa en distintas disciplinas, que trabajamos
@@ -114,7 +114,7 @@
 
       <div class="mb-3" style="width: 100%;">
         <label for="" class="form-label">Sube tu CV</label>
-        <!-- <input type="file" accept=".pdf" (change)="onFileChange($event)" formControlName="cv" class="form-control"> -->
+        <input type="file" accept=".pdf" (change)="onFileChange($event)" formControlName="cv" class="form-control">
         @if(formulario.get('cv').invalid && formulario.get('cv').touched || cv){
         <div class="error">
           CV es requerido y solo acepta pdf
