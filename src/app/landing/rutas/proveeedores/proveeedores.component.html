@@ -1,6 +1,6 @@
 @if(accion === 'alta' || accion === 'efactura'){
 <div class="contenedor" [@fadeIn]>
-  <div class="title">Proveedores</div>
+  <h1 class="title">Proveedores</h1>
 
   <section class="disclaimer">
     Estimado Proveedor ponemos a su disposición nuestro aviso de privacidad de datos en la página <a class="link"
@@ -12,7 +12,7 @@
 
   @if(accion === 'alta'){
   <section class="botones">
-    <div class="title" id="seccion"> ALTA E INTEGRACIÓN DE EXPEDIENTES</div>
+    <h1 class="title" id="seccion"> ALTA E INTEGRACIÓN DE EXPEDIENTES</h1>
     <div class="conjunto">
       <a href="https://www.e-expedientes.com/Portal/Expedientes/Create?HeaderId=4D7A41774D5464664D7A41774D5456664E5441344E54493D"
         class="btn btn-outline-danger">Persona Fisica</a>
@@ -27,7 +27,7 @@
   @if(accion === 'efactura'){
 
   <section class="botones">
-    <div class="title" id="seccion">REVISIÓN DE FACTURAS</div>
+    <h1 class="title" id="seccion">REVISIÓN DE FACTURAS</h1>
     <div class="conjunto">
       <a href="https://andamiosatlas.e-facturabuzon.com/" class="btn btn-outline-danger">Proveedores</a>
       <a href="https://andamiosatlas.e-facturabuzon.com/AND/Admin/Acceso_Sitio/Login.aspx"
@@ -37,7 +37,7 @@
   }
 
   <section class="help">
-    <div class="title" id="seccion">GUÍA RÁPIDA PARA PORTAL</div>
+    <h1 class="title" id="seccion">GUÍA RÁPIDA PARA PORTAL</h1>
     <!--PDF-->
     <h4>¿Quedaste con dudas? Contactanos!</h4>
     <a href="/atlas/contacto" class="btn btn-outline-danger" id="contacto">Contactanos</a>
@@ -46,8 +46,74 @@
 }
 
 @if(accion === 'comunicados'){
+<style>
+    .col-md-3 {
+        width: 25%;
+    }
+    .col-md-9 {
+        width: 75%;
+    }
+    .row {
+    margin-right: 0;
+    margin-left: 0;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+  .columna_izq li {
+    list-style-type: none;
+    padding: 10px 2px;
+    border-bottom: 1px solid #efefef;
+    font-size: 13px;
+}
+  .columna_izq a {
+    color: #000
+}
+a { 
+  text-decoration: none; /* Remove underline */ 
+}
+a:hover { 
+  text-decoration: underline; /* Add underline on hover */ 
+  }
+</style>
 <div class="contenedor" [@fadeIn]>
-  <div class="title">Comunicados</div>
+  <h1 class="title">Comunicados</h1>
+  <div class="container">
+  <div class="row">
+    
+    <div class="col-md-3 columna_izq" >
+      <h3>Nuestros sistemas</h3>
+      <ul>
+        <li><a href="">ANDAMIO ALTA RESISTENCIA</a></li>
+        <li><a href="">ANDAMIO CONVENCIONAL</a></li>
+        <li><a href="">APUNTALAMIENTO</a></li>
+        <li><a href="">CIMBRA CIRCULAR</a></li>
+        <li><a href="">CIMBRA LIGERA</a></li>
+        <li><a href="">CIMBRA PARA COLUMNA</a></li>
+        <li><a href="">CIMBRA RECTA</a></li>
+        <li><a href="">CIMBRA VCA</a></li>
+    </ul>
+    <h3>Ubicación</h3>
+    <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3161.6398052529726!2d-99.20508629347083!3d19.548286236979617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d21d65b46d1ea5%3A0xe20c95305264d3e6!2sAndamios%20Atlas!5e0!3m2!1ses-419!2smx!4v1732813840895!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+    </div>
+    <div class="col-md-9" >
+      <h2>COMUNICADOS</h2>
+    </div>
+  </div>
+  </div>
   @for (comunicado of comunicados.reverse(); track comunicado) {
   <div>
     <div class="comunicado">
@@ -63,7 +129,7 @@
 
 @if(accion === 'aviso'){
 <div class="contenedor" [@fadeIn]>
-  <div class="title">Aviso</div>
+  <h1 class="title">Aviso</h1>
 
   <div class="texto">
     Apreciable Proveedor
