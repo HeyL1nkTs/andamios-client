@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarLandingComponent } from './componentes/navbar-andamios/app-navbar-conten.component';
-import { FooterLandingComponent } from './componentes/footer/app-footer-conten.component';
+import { NavbarAndamiosComponent } from '../andamios/componentes/navbar-andamios/navbar-andamios.component';
+import { ContenNavbarComponent } from "./html/conten-navbar/conten-navbar.component";
 
 @Component({
-  selector: 'app-landing',
+  selector: 'app-conten',
   standalone: true,
-  imports: [RouterOutlet, NavbarLandingComponent, FooterLandingComponent],
+  imports: [RouterOutlet, NavbarAndamiosComponent, ContenNavbarComponent],
   templateUrl: './conten.component.html',
   styleUrl: './conten.component.css'
 })
-export class LandingComponent {
-  
+export class ContenComponent {
+
 }

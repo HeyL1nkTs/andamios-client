@@ -1,0 +1,119 @@
+<div class="contenedor" @fadeIn>
+    <div class="cover-photo">
+        <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                @for (slide of slides; track slide ; let isFirst = $first) {
+                <div class="carousel-item" [class.active]="isFirst">
+                    @if(imgResponsive){
+                    <img [src]="slide.img" class="d-block w-100" alt="...">
+                    }@else {
+                    <img [src]="slide.img" class="d-block w-100" alt="...">
+                    }
+                    @if(slide.button){
+                    <a href="javascript:void(0)" (click)="scrollToElement('plantas')">CONOCE MÁS</a>
+                    }
+                </div>
+                }
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <section class="summary">
+        <div class="left">
+            <img src="assets/imagenes/Conten-nosotros-3.jpg" alt="">
+            <a href="javascript:void(0)" (click)="scrollToElement('text')">Sigue leyendo</a>
+        </div>
+        <div class="right">
+            <p>
+                <strong>
+                    En Contén Atlas nos
+                    especializamos en el
+                    diseño y manufactura de:
+                </strong>
+            </p>
+
+            <ul>
+                <li>Racks automotrices</li>
+                <li>Contenedores metálicos</li>
+            </ul>
+
+            <p>
+                <strong>
+                    para la industria automotriz.
+                </strong>
+            </p>
+        </div>
+    </section>
+
+    <section class="summary-page" id="text">
+        <h1>Nuestras características</h1>
+        <div class="cards">
+            <div class="item">
+                <img src="assets/design.svg" />
+                <h2>Diseño Personalizado</h2>
+                <p>
+                    Trabajamos estrechamente
+                    con nuestros clientes para
+                    desarrollar soluciones que se
+                    ajusten a sus necesidades.
+                </p>
+            </div>
+            <div class="item">
+                <img id="no-invert" src="assets/quality-service.svg" />
+                <h2>Calidad y Durabilidad</h2>
+                <p>
+                    Nuestros productos están
+                    fabricados con materiales
+                    especiales para garantizar la
+                    seguridad de las autopartes
+                    durante el transporte.
+                </p>
+            </div>
+            <div class="item">
+                <img id="no-invert" src="assets/customer-service.svg" />
+                <h2>Servicio Integral</h2>
+                <p>
+                    No solo proporcionamos
+                    productos, sino también
+                    asesoramiento experto y
+                    servicios de diseño e
+                    ingeniería.
+                </p>
+            </div>
+        </div>
+
+        <div class="slogan">
+            <p>
+                Nos enorgullece de ser parte de la cadena de suministro de la industria automotriz,
+                contribuyendo a la eficiencia y seguridad en el manejo de autopartes.
+            </p>
+        </div>
+    </section>
+
+    <section class="plantas" id="plantas">
+        <p>Nuestras plantas</p>
+        <div class="grid-plantas">
+            @for(planta of plantas; track planta) {
+            <div class="set">
+                <img src="{{planta.img}}" alt="">
+                <div class="description">
+                    <p class="size">{{planta.size}}</p>
+                    <p class="location">{{planta.location}}</p>
+                </div>
+            </div>
+            }
+        </div>
+    </section>
+
+    <!--<img style="height: auto; width: 100%;" src="assets/imagenes/Conten-nosotros-2.jpg" alt="">-->
+</div>

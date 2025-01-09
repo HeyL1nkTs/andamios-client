@@ -1,0 +1,148 @@
+/*
+Estilos generales
+*/
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* Estilos de la barra de navegación */
+
+.network {
+    background-color: var(--color-secundario);
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 40px;
+}
+
+.social {
+    display: flex;
+    gap: 10px;
+}
+
+.social img {
+    filter: invert(1);
+    width: 30px;
+    height: 30px;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact p {
+    color: white;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+}
+
+.logos {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+#logo img {
+    height: auto;
+    width: 100px;
+}
+
+.opciones {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    position: relative;
+}
+
+.opc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.opc a {
+    color: black;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.opc a:hover {
+    color: white;
+    background-color: var(--color-secundario);
+}
+
+/* Asegurarte de que el hover esté activo cuando el submenú esté visible */
+.opc:hover a {
+    color: white;
+    background-color: var(--color-secundario); /* Esto asegura que el enlace mantenga el color de fondo cuando el submenú se muestra */
+}
+
+/* Submenú oculto inicialmente */
+.subopc {
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    z-index: 100;
+    transition: opacity 0.3s, pointer-events 0.3s;
+}
+
+/* Estilo de los enlaces del submenú */
+.subopc a {
+    color: white;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-secundario);
+}
+
+/* Hover en subenlaces */
+.subopc a:hover {
+    border: 5px solid var(--color-secundario);
+    background-color: white;
+    color: var(--color-secundario);
+}
+
+/* Mostrar el submenú cuando se hace hover sobre la categoría */
+.opc:hover .subopc {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.active {
+    color: white !important;
+    background-color: var(--color-secundario);
+}
