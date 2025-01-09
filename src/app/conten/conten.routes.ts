@@ -1,19 +1,19 @@
-import { Routes } from "@angular/router";
-import { LandingComponent } from "./conten.component";
-import { AboutUsComponent } from "./rutas/aboutUs/aboutUs.component";
-import { ManufactureComponent } from "./rutas/manufacture/manufacture.component";
-import { DesignAndEngineringComponent } from "./rutas/desingAndEnginerng/desingAndEnginerng.component";
-import { ProductsComponent } from "./rutas/products/products.component";
-import { CertificationsComponent } from "./rutas/certifications/certifications.component";
+import { Routes } from '@angular/router';
+import { ContenComponent } from './conten.component';
+import { NosotrosComponent } from './ws/nosotros/nosotros.component';
+import { ManufcturaComponent } from './ws/manufctura/manufctura.component';
+import { IngenieriaComponent } from './ws/ingenieria/ingenieria.component';
+import { ProductosComponent } from './ws/productos/productos.component';
+import { CertificacionesComponent } from './ws/certificaciones/certificaciones.component';
 
-export const routes : Routes = [
-  { path: '', component: LandingComponent, children: [
-    { path: '', component: AboutUsComponent },
-    { path: 'Manufactura', component: ManufactureComponent },
-    { path: 'DiseñoEIngenieria', component: DesignAndEngineringComponent },
-    { path: 'Productos', component: ProductsComponent },
-    { path: 'Certificaciones', component: CertificationsComponent },
-    
-  ]}
-]
-
+export const routes: Routes = [
+    {
+        path: '', component: ContenComponent, children: [
+            { path: '', component: NosotrosComponent },
+            { path: 'manufactura', component: ManufcturaComponent },
+            { path: 'manufactura/:name', component: ManufcturaComponent },
+            { path: 'ingenieria', component: IngenieriaComponent },
+            { path: 'productos', component: ProductosComponent },
+            { path: 'certificaciones', component: CertificacionesComponent }
+        ]
+    }];
