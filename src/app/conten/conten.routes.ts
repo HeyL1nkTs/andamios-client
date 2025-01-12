@@ -11,7 +11,8 @@ export const routes: Routes = [
         path: '', component: ContenComponent, children: [
             { path: '', component: NosotrosComponent },
             { path: 'manufactura', component: ManufcturaComponent },
-            { path: 'manufactura/:name', component: ManufcturaComponent },
+            { path: 'manufactura/seccion/:name', component: ManufcturaComponent },
+            { path: 'manufactura/subseccion/:name', component: ManufcturaComponent },
             { path: 'ingenieria', component: IngenieriaComponent },
             { path: 'productos', component: ProductosComponent },
             { path: 'certificaciones', component: CertificacionesComponent }

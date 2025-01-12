@@ -1,32 +1,41 @@
 <div class="contenedor" [@fadeIn]>
 
-    <div class="certificaciones-Img">
-        <img src="assets/imagenes/certificaciones.png" alt="" class="certificaciones-Img">
-    </div>
-    <div class="cetifications-carousel">
-        <div class="left">
-            <div class="indide-container">
+  <div class="banner">
+    <img src="assets/imagenes/certificaciones.png" alt="">
+  </div>
 
-                <div class="select">
-                    <img src="assets/imagenes/Diseño_e_ingenieria_selector_izq_blanco.png" alt="" class="">
-                </div>
-                <div class="cert-description">
-                    Contamos con el Certificado otorgado por el Instituto Mexicano de Normalización y Certificación A.C.
-                    por implementar y mantener un sistema de Gestión de la Calidad de conformidad con
-                    NMX-CC-9001-IMNC-2015 ISO 9001:2015
-                </div>
+  <div class="contenido">
+    <div class="carousel-container">
+      <!-- CAROUSEL ELEMENT -->
+      <swiper-container autoplay="false" [loop]="loop" speed="1000" [slidesPerView]="slidesPer"
+        [ngStyle]="{ width: width }" id="carousel">
+        <!-- SLIDES -->
+        @for(slide of cerificaciones; track slide){
+        <swiper-slide>
+          <div class="element" [ngStyle]="{ height: height }">
+            <div class="description-container">
+              <p [innerHTML]="slide.description"></p>
             </div>
-        </div>
-        <div class="right">
-            <div class="indide-container">
-
-                <div class="cert-Img">
-                    <img src="assets/imagenes/ceritifaciones_2.png" alt="" class="cert-Img">
-                </div>
-                <div class="select">
-                    <img src="assets/imagenes/Diseño_e_ingenieria_selector_der.png" alt="" class="">
-                </div>
+            <!--TODO Implement (click)=download(slide.doc)-->
+            <div class="img-container" [ngStyle]="{ height: imgHeight, width: imgWidth }">
+              <img [src]="slide.img" alt="slide.img" class="img">
             </div>
-        </div>
+          </div>
+        </swiper-slide>
+        }
+        <!-- END SLIDES -->
+      </swiper-container>
+      <!-- END CAROUSEL ELEMENT -->
+      <div class="next" >
+        <button (click)="nextView()">
+          <mat-icon id="next">keyboard_double_arrow_right</mat-icon>
+        </button>
+      </div>
+      <div class="prev" >
+        <button (click)="prevView()">
+          <mat-icon id="prev">keyboard_double_arrow_left</mat-icon>
+        </button>
+      </div>
     </div>
+  </div>
 </div>

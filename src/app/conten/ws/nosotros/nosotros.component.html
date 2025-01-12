@@ -4,10 +4,10 @@
             <div class="carousel-inner">
                 @for (slide of slides; track slide ; let isFirst = $first) {
                 <div class="carousel-item" [class.active]="isFirst">
-                    @if(imgResponsive){
+                    @if(!isMobile && !isTablet) {
                     <img [src]="slide.img" class="d-block w-100" alt="...">
                     }@else {
-                    <img [src]="slide.img" class="d-block w-100" alt="...">
+                    <img [src]="slide.imgResponsive" class="d-block w-100" alt="...">
                     }
                     @if(slide.button){
                     <a href="javascript:void(0)" (click)="scrollToElement('plantas')">CONOCE MÁS</a>
