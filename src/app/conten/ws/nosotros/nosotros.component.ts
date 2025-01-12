@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { fadeAnimation, fadeInAnimation } from '../../../fadeIn';
+import { MobileService } from '../../../mobile.service';
 
 @Component({
   selector: 'app-nosotros',

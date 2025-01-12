@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { title } from 'process';
+import { MobileService } from '../../../mobile.service';
 
 @Component({
   selector: 'app-conten-navbar',
@@ -13,6 +13,7 @@ import { title } from 'process';
 export class ContenNavbarComponent {
 
   mainUrl = '/conten/';
+  icon:string = 'menu'
 
   configCategories = [
     {
@@ -80,5 +81,27 @@ export class ContenNavbarComponent {
     }
   ];
 
-  constructor() {}
+  isMobile: boolean;
+  isTablet: boolean;
+
+  constructor(private mobile: MobileService) {}
+
+  ngOnInit() {
+    this.mobile.getWidth().subscribe(width => {
+      this.isMobile = width < 768;
+      this.isTablet = width >= 768 && width < 1279;
+      console.log('isMobile', this.isMobile);
+      console.log('isTablet', this.isTablet);
+    });
+  }
+
+  toggleIcon(){
+    if (this.icon == 'close') {
+      this.icon = 'menu'
+    } else if (this.icon == 'menu') {
+      this.icon = 'close'
+    }
+
+    document.getElementById('responsive-menu').classList.toggle('openMenu')
+  }
 }
