@@ -12,87 +12,71 @@ import { title } from 'process';
 })
 export class ContenNavbarComponent {
 
+  mainUrl = '/conten/';
+
   configCategories = [
     {
       title: 'NOSOTROS',
       hasSections: false,
       link: '/conten',
-      isDefault: true
+      isDefault: true,
+      isActive: true
     },
     {
       title: 'MANUFACTURA',
       hasSections: true,
-      link: '/conten/manufactura', //Para este link la const es: /conten
+      link: '/conten/manufactura',
+      isActive: true,
       sections: [
         {
-          title: 'Corte',
-          link: '/conten/manufactura/corte' //Para este link la const es el nombre de la sección
+          title: 'Corte Laser para Tubo',
+          link: 'corte-laser-para-tubo'
         },
         {
-          title: 'Doblado',
-          link: '/conten/manufactura/doblado'
+          title: 'Corte Laser Placa y Lamina',
+          link: 'corte-laser-placa-y-lamina'
         },
         {
-          title: 'Soldadura',
-          link: '/conten/manufactura/soldadura'
-        },
-        {
-          title: 'Pintura',
-          link: '/conten/manufactura/pintura'
+          title: 'Robot de Soldadura',
+          link: 'robot-de-soldadura'
         }
       ]
     },
     {
       title: 'DISEÑO E INGENIERÍA',
       hasSections: false,
-      link: '/conten/ingenieria'
+      isActive: true,
+      link: this.mainUrl + 'ingenieria'
     },
     {
       title: 'PRODUCTOS',
-      hasSections: true,
-      link: '/conten/productos',
-      sections: [
-        {
-          title: 'Cajas',
-          link: '/conten/productos/cajas'
-        },
-        {
-          title: 'Gabinetes',
-          link: '/conten/productos/gabinetes'
-        },
-        {
-          title: 'Racks',
-          link: '/conten/productos/racks'
-        },
-        {
-          title: 'Paneles',
-          link: '/conten/productos/paneles'
-        },
-        {
-          title: 'Puertas',
-          link: '/conten/productos/puertas'
-        }
-      ]
+      hasSections: false,
+      isActive: true,
+      link: this.mainUrl + 'productos'
     },
     {
       title: 'NUESTRAS CERTIFICACIONES',
       hasSections: false,
-      link: '/conten/certificaciones'
+      isActive: true,
+      link: this.mainUrl + 'certificaciones'
     },
     {
       title: 'OPC1',
       hasSections: false,
-      link: '/conten/opc1'
+      isActive: false,
+      link: this.mainUrl + 'opc1'
     },
     {
       title: 'OPC2 NUESTRAS CERTIFICACIONES',
       hasSections: false,
-      link: '/conten/opc1'
+      isActive: false,
+      link: this.mainUrl + 'opc1'
     },
     {
       title: 'OPC2 NOMBRE LARGO',
       hasSections: false,
-      link: '/conten/opc1'
+      isActive: false,
+      link: this.mainUrl + 'opc1'
     }
   ];
 

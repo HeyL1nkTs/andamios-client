@@ -1,6 +1,7 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import _ from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -56,5 +57,19 @@ export class PetitionsService {
 
   sanitizeHtml(content: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(content);
+  }
+
+  formatToDashes(input: string): string {
+    // Primero elimina espacios de los extremos
+    const trimmed = _.lowerCase(_.trim(input));
+    // Luego reemplaza los espacios intermedios por "-"
+    return _.replace(trimmed, /\s+/g, '-');
+  }
+
+  formatToSpaces(input: string): string {
+    // Reemplaza los guiones por espacios
+    const replaced = _.replace(input, /-/g, ' ');
+    // Luego elimina espacios de los extremos
+    return _.trim(replaced);
   }
 }

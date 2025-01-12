@@ -37,7 +37,47 @@
       </div>
     </div>
   </div>
-  } @else {
+  } @else if (isSection){
+  <div class="seccion">
+    <div class="seccion-titulo">
+      <h2>{{seccion.name}}</h2>
+    </div>
+    <div class="img-carrousel">
+      <div class="carousel-container">
+        <!-- CAROUSEL ELEMENT -->
+        <swiper-container autoplay="false" [loop]="loop" speed="1000" [slidesPerView]="slidesPer"
+          [ngStyle]="{ width: width }" id="carousel-{{seccion.id}}">
+          <!-- SLIDES -->
+          @for(slide of seccion.subSecciones; track slide){
+          <swiper-slide>
+            <div class="element" [ngStyle]="{ height: height }" (click)="goTo(slide.name)">
+              <div class="img-container" [ngStyle]="{ height: imgHeight, width: imgWidth }">
+                <img [src]="slide.img" alt="slide.img" class="img">
+              </div>
+              <div class="content">
+                <p>{{slide.name}}</p>
+              </div>
+            </div>
+          </swiper-slide>
+          }
+          <!-- END SLIDES -->
+        </swiper-container>
+        <!-- END CAROUSEL ELEMENT -->
+        <div class="next">
+          <button (click)="nextView(seccion.id)">
+            <mat-icon>keyboard_double_arrow_right</mat-icon>
+          </button>
+        </div>
+        <div class="prev">
+          <button (click)="prevView(seccion.id)">
+            <mat-icon>keyboard_double_arrow_left</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+  @else {
   <div class="contenido">
     @for(seccion of secciones; track seccion){
     <div class="seccion">
@@ -48,7 +88,7 @@
         <div class="carousel-container">
           <!-- CAROUSEL ELEMENT -->
           <swiper-container autoplay="false" [loop]="loop" speed="1000" [slidesPerView]="slidesPer"
-            [ngStyle]="{ width: width }" id="carousel-{{seccion.id}}" >
+            [ngStyle]="{ width: width }" id="carousel-{{seccion.id}}">
             <!-- SLIDES -->
             @for(slide of seccion.subSecciones; track slide){
             <swiper-slide>

@@ -1,43 +1,45 @@
 <nav>
-    <section class="network">
-        <div class="social">
-            <a href="https://api.whatsapp.com/send/?phone=5215572400383&text&type=phone_number&app_absent=0"><img
-                    src="assets/wp-filled.svg" alt=""></a>
-            <a href="https://www.facebook.com/Andamios.Atlas.Encofrados/"><img src="assets/fb-filled.svg" alt=""></a>
-            <a href="https://twitter.com/Andamios_Atlas?lang=es"><img src="assets/x-filled.svg" alt=""></a>
-            <a href="https://www.instagram.com/andamiosatlas/?hl=es-la"><img src="assets/ig-filled.svg" alt=""></a>
+  <section class="network">
+    <div class="social">
+      <a href="https://api.whatsapp.com/send/?phone=5215572400383&text&type=phone_number&app_absent=0"><img
+          src="assets/wp-filled.svg" alt=""></a>
+      <a href="https://www.facebook.com/Andamios.Atlas.Encofrados/"><img src="assets/fb-filled.svg" alt=""></a>
+      <a href="https://twitter.com/Andamios_Atlas?lang=es"><img src="assets/x-filled.svg" alt=""></a>
+      <a href="https://www.instagram.com/andamiosatlas/?hl=es-la"><img src="assets/ig-filled.svg" alt=""></a>
+    </div>
+    <div class="contact">
+      <p>
+        <mat-icon>phone</mat-icon>
+        <span>800 Andamio (2632646)</span>
+      </p>
+      <p>
+        <mat-icon>email</mat-icon>
+        <span><a
+            href="mailto:servicioaclientes@andamiosatlas.com?subject=Servicio%20al%20cliente">servicioclientes&#64;andamiosatlas.com</a></span>
+      </p>
+    </div>
+  </section>
+  <section class="menu">
+    <div class="logos">
+      <a href="/andamios" id="logo"><img src="assets/Logo_Andamios-Atlas.png" alt="Andamios Atlas"></a>
+      <a href="/conten" id="logo"><img src="assets/Logo-Conten.png" alt="Encofrados"></a>
+    </div>
+    <div class="opciones">
+      @for (category of configCategories; track category) {
+      @if(category.isActive){
+      <div class="opc">
+        <a [routerLink]="category.link" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">{{category.title}}</a>
+        @if(category.hasSections){
+        <div class="subopc">
+          @for (subcategory of category.sections; track subcategory) {
+          <a [routerLink]="'/conten/manufactura/seccion/' + subcategory.link">{{subcategory.title}}</a>
+          }
         </div>
-        <div class="contact">
-            <p>
-                <mat-icon>phone</mat-icon>
-                <span>800 Andamio (2632646)</span>
-            </p>
-            <p>
-                <mat-icon>email</mat-icon>
-                <span><a
-                        href="mailto:servicioaclientes@andamiosatlas.com?subject=Servicio%20al%20cliente">servicioclientes&#64;andamiosatlas.com</a></span>
-            </p>
-        </div>
-    </section>
-    <section class="menu">
-        <div class="logos">
-            <a href="/andamios" id="logo"><img src="assets/Logo_Andamios-Atlas.png" alt="Andamios Atlas"></a>
-            <a href="/conten" id="logo"><img src="assets/Logo-Conten.png" alt="Encofrados"></a>
-        </div>
-        <div class="opciones">
-            @for (category of configCategories; track category) {
-            <div class="opc">
-                <a [routerLink]="category.link" routerLinkActive="active"
-                    [routerLinkActiveOptions]="{exact: true}">{{category.title}}</a>
-                @if(category.hasSections){
-                <div class="subopc">
-                    @for (subcategory of category.sections; track subcategory) {
-                    <a [routerLink]="subcategory.link">{{subcategory.title}}</a>
-                    }
-                </div>
-                }
-            </div>
-            }
-        </div>
-    </section>
+        }
+      </div>
+      }
+      }
+    </div>
+  </section>
 </nav>
