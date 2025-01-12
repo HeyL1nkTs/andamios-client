@@ -90,8 +90,6 @@ export class ContenNavbarComponent {
     this.mobile.getWidth().subscribe(width => {
       this.isMobile = width < 768;
       this.isTablet = width >= 768 && width < 1279;
-      console.log('isMobile', this.isMobile);
-      console.log('isTablet', this.isTablet);
     });
   }
 

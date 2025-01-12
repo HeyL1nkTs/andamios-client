@@ -11,32 +11,30 @@ import { MobileService } from '../../../mobile.service';
   animations:[fadeAnimation, fadeInAnimation]
 })
 export class NosotrosComponent {
-  constructor() { }
 
-  imgResponsive = [
-    {
-      img: 'assets/imagenes/cA.jpg',
-      title: 'Slide 1',
-      description: 'Slide 1 description',
-      button: false
-    },
-    {
-      img: 'assets/imagenes/cB.jpg',
-      title: 'Slide 2',
-      description: 'Slide 2 description',
-      button: true
-    }
-  ]
+  isMobile: boolean;
+  isTablet: boolean;
+
+  constructor(private mobile: MobileService) { }
+
+  ngOnInit() {
+    this.mobile.getWidth().subscribe(width => {
+      this.isMobile = width < 768;
+      this.isTablet = width >= 768 && width < 1279;
+    });
+  }
 
   slides = [
     {
-      img: 'assets/imagenes/cA.jpg',
+      img: 'assets/imagenes/cA.jpg', //base64 image
+      imgResponsive: 'assets/imagenes/cA.jpg',
       title: 'Slide 1',
       description: 'Slide 1 description',
-      button: false
+      button: true
     },
     {
       img: 'assets/imagenes/cB.jpg',
+      imgResponsive: 'assets/imagenes/cB.jpg',
       title: 'Slide 2',
       description: 'Slide 2 description',
       button: true

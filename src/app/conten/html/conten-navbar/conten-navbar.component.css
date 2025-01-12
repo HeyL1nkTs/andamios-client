@@ -151,7 +151,7 @@ a {
 
 @media only screen and (min-width: 3440px) {}
 
-@media only screen and (min-width: 2560px) and (max-width: 3439px) {
+@media only screen and (min-width: 2560px) and (max-width: 3439px) { /* WIDE MONITORS */
   .menu{
     justify-content: flex-start;
   }
@@ -179,7 +179,7 @@ a {
   }
 }
 
-@media only screen and (min-width: 1280px) and (max-width: 1919px) {
+@media only screen and (min-width: 1280px) and (max-width: 1919px) { /* LAPTOP */
   .menu{
     justify-content: flex-start;
   }
@@ -189,7 +189,7 @@ a {
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1279px) {
+@media only screen and (min-width: 768px) and (max-width: 1279px) { /* TABLET */
   .navbar{
     background-color: var(--color-secundario) !important;
   }
@@ -237,7 +237,7 @@ a {
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) { /* MOBILE */
   .navbar{
     background-color: var(--color-secundario) !important;
   }

@@ -30,6 +30,7 @@ export class ManufcturaComponent {
     {
       id: 1,
       name: 'Corte Laser para Tubo',
+      tipo: 1,
       subSecciones: [
         { id: 1, name: 'Item 1', img: 'assets/imagenes/manufactura/CorteLaser/corte1.jpeg' },
         { id: 2, name: 'MEDICIÓN DE RACKS POR MEDIO DE SCANNER', img: 'assets/imagenes/manufactura/CorteLaser/corte2.jpeg' },
