@@ -52,7 +52,7 @@ NMX-CC-9001-IMNC-2015 ISO 9001:2015
   width: string = "100%";
   height: string = "auto";
   imgWidth: string = "100%";
-  imgHeight: string = "500px";
+  imgHeight: string = "300px";
   mainUrl: string = '/';
   destinyUrl: string = '/';
   autoplay: any = {

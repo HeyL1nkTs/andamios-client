@@ -43,9 +43,14 @@
       <h2>{{seccion.name}}</h2>
     </div>
     <div class="img-carrousel">
+      <div class="prev">
+        <button (click)="prevView(seccion.id)">
+          <mat-icon>keyboard_double_arrow_left</mat-icon>
+        </button>
+      </div>
       <div class="carousel-container">
         <!-- CAROUSEL ELEMENT -->
-        <swiper-container autoplay="false" [loop]="loop" speed="1000" [slidesPerView]="slidesPer"
+        <swiper-container autoplay="true" [loop]="loop" speed="1000" [slidesPerView]="slidesPer"
           [ngStyle]="{ width: width }" id="carousel-{{seccion.id}}">
           <!-- SLIDES -->
           @for(slide of seccion.subSecciones; track slide){
@@ -63,16 +68,11 @@
           <!-- END SLIDES -->
         </swiper-container>
         <!-- END CAROUSEL ELEMENT -->
-        <div class="next">
-          <button (click)="nextView(seccion.id)">
-            <mat-icon>keyboard_double_arrow_right</mat-icon>
-          </button>
-        </div>
-        <div class="prev">
-          <button (click)="prevView(seccion.id)">
-            <mat-icon>keyboard_double_arrow_left</mat-icon>
-          </button>
-        </div>
+      </div>
+      <div class="next">
+        <button (click)="nextView(seccion.id)">
+          <mat-icon>keyboard_double_arrow_right</mat-icon>
+        </button>
       </div>
     </div>
   </div>
@@ -85,9 +85,14 @@
         <h2>{{seccion.name}}</h2>
       </div>
       <div class="img-carrousel">
+        <div class="prev">
+          <button (click)="prevView(seccion.id)">
+            <mat-icon>keyboard_double_arrow_left</mat-icon>
+          </button>
+        </div>
         <div class="carousel-container">
           <!-- CAROUSEL ELEMENT -->
-          <swiper-container autoplay="false" [loop]="loop" speed="1000" [slidesPerView]="slidesPer"
+          <swiper-container autoplay="true" [loop]="loop" speed="1000" [slidesPerView]="slidesPer"
             [ngStyle]="{ width: width }" id="carousel-{{seccion.id}}">
             <!-- SLIDES -->
             @for(slide of seccion.subSecciones; track slide){
@@ -105,18 +110,14 @@
             <!-- END SLIDES -->
           </swiper-container>
           <!-- END CAROUSEL ELEMENT -->
-          <div class="next">
-            <button (click)="nextView(seccion.id)">
-              <mat-icon>keyboard_double_arrow_right</mat-icon>
-            </button>
-          </div>
-          <div class="prev">
-            <button (click)="prevView(seccion.id)">
-              <mat-icon>keyboard_double_arrow_left</mat-icon>
-            </button>
-          </div>
+        </div>
+        <div class="next">
+          <button (click)="nextView(seccion.id)">
+            <mat-icon>keyboard_double_arrow_right</mat-icon>
+          </button>
         </div>
       </div>
+
     </div>
     }
   </div>

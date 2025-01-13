@@ -33,6 +33,13 @@
   padding: 20px;
 }
 
+.img-carrousel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
 .title {
   margin-bottom: 20px;
 }
@@ -49,7 +56,7 @@
 /* CAROUSEL */
 
 .carousel-container{
-  width: 100%;
+  width: 80%;
   height: auto;
   position: relative;
 }
@@ -76,18 +83,18 @@
   z-index: 100;
 }
 
-.prev{
-  left: 100px;
-}
-
-.next{
-  right: 100px;
-}
-
 .prev button, .next button{
   cursor: pointer;
   border: none;
   background-color: transparent;
+}
+
+.prev {
+  right: 90%;
+}
+
+.next {
+  left: 90%;
 }
 
 mat-icon{
@@ -148,4 +155,48 @@ mat-icon{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+@media only screen and (min-width: 2560px) and (max-width: 3439px) {}
+@media only screen and (min-width: 768px) and (max-width: 1439px) {
+
+  .contenedor{
+    padding-top: 50px;
+  }
+
+  .prev , .next{
+    top: 40%;
+  }
+
+}
+@media only screen and (max-width: 767px) {
+
+  .prev , .next{
+    top: 40%;
+  }
+
+  .prev{
+    right: 80%;
+  }
+
+  .next{
+    left: 80%;
+  }
+
+  .panel{
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .carousel-item{
+    height: 300px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .contenedor{
+    padding-top: 50px;
+  }
 }
