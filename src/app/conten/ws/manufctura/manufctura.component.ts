@@ -8,6 +8,7 @@ import _ from 'lodash';
 // import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
 import { PetitionsService } from '../../../petitions.service';
+import { MobileService } from '../../../mobile.service';
 // register Swiper custom elements
 register();
 
@@ -97,12 +98,12 @@ export class ManufcturaComponent {
       slidesPerView: 1,
     },
     1024: {
-      slidesPerView: 3,
+      slidesPerView: 2,
     },
   };
-  width: string = "80%";
+  width: string = "100%";
   height: string = "auto";
-  imgWidth: string = "80%";
+  imgWidth: string = "90%";
   imgHeight: string = "300px";
   mainUrl: string = '/';
   destinyUrl: string = '/';
@@ -112,7 +113,14 @@ export class ManufcturaComponent {
     pauseOnMouseEnter: true
   }
 
-  constructor(private router: Router, private route: ActivatedRoute, private sanitizer: DomSanitizer, private petitionsService: PetitionsService) {
+  isMobile: boolean;
+  isTablet: boolean;
+
+  constructor(private router: Router, private route: ActivatedRoute,
+    private sanitizer: DomSanitizer,
+    private petitionsService: PetitionsService,
+    private mobile: MobileService
+  ) {
     this.route.paramMap.subscribe(params => {
       this.isSection = false;
       this.isSubSection = false;
@@ -130,6 +138,29 @@ export class ManufcturaComponent {
       } else {
         this.isSubSection = false;
         this.isSection = false;
+      }
+    });
+  }
+
+  ngOnInit() {
+    this.mobile.getWidth().subscribe(width => {
+      this.isMobile = width < 768;
+      this.isTablet = width >= 768 && width < 1279;
+
+      if(this.isMobile) {
+        this.slidesPer = 1;
+        this.imgWidth = "60%";
+        this.width = "100%";
+        this.height = "auto";
+        this.imgHeight = "200px";
+      } else if(this.isTablet) {
+        this.slidesPer = 2;
+        this.imgWidth = "70%";
+        this.width = "100%";
+        this.height = "auto";
+        this.imgHeight = "200px";
+      } else {
+        this.slidesPer = 3;
       }
     });
   }

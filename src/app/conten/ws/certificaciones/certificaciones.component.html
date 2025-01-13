@@ -5,6 +5,11 @@
   </div>
 
   <div class="contenido">
+    <div class="prev" >
+      <button (click)="prevView()">
+        <mat-icon id="prev">keyboard_double_arrow_left</mat-icon>
+      </button>
+    </div>
     <div class="carousel-container">
       <!-- CAROUSEL ELEMENT -->
       <swiper-container autoplay="false" [loop]="loop" speed="1000" [slidesPerView]="slidesPer"
@@ -26,16 +31,11 @@
         <!-- END SLIDES -->
       </swiper-container>
       <!-- END CAROUSEL ELEMENT -->
-      <div class="next" >
-        <button (click)="nextView()">
-          <mat-icon id="next">keyboard_double_arrow_right</mat-icon>
-        </button>
-      </div>
-      <div class="prev" >
-        <button (click)="prevView()">
-          <mat-icon id="prev">keyboard_double_arrow_left</mat-icon>
-        </button>
-      </div>
+    </div>
+    <div class="next" >
+      <button (click)="nextView()">
+        <mat-icon id="next">keyboard_double_arrow_right</mat-icon>
+      </button>
     </div>
   </div>
 </div>

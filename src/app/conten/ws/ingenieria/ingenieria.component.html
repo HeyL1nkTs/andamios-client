@@ -6,31 +6,31 @@
   <div class="contenido">
     @for (design of designs; track design) {
     <div class="item">
-      <div class="carousel-container">
-        <!-- CAROUSEL ELEMENT -->
-        <swiper-container autoplay="false" [loop]="loop" speed="1000" [slidesPerView]="slidesPer"
-          [ngStyle]="{ width: width }" id="carousel-{{design.id}}">
-          <!-- SLIDES -->
-          @for(slide of design.imgs; track slide){
-          <swiper-slide>
-            <div class="element" [ngStyle]="{ height: height }">
-              <div class="img-container" [ngStyle]="{ height: imgHeight, width: imgWidth }">
-                <img [src]="slide.img" alt="slide.img" class="img">
-              </div>
-            </div>
-          </swiper-slide>
-          }
-          <!-- END SLIDES -->
-        </swiper-container>
-        <!-- END CAROUSEL ELEMENT -->
-        <div class="next">
-          <button (click)="nextView(design.id)">
-            <mat-icon>keyboard_double_arrow_right</mat-icon>
-          </button>
-        </div>
+      <div class="img-carrousel">
         <div class="prev">
           <button (click)="prevView(design.id)">
             <mat-icon>keyboard_double_arrow_left</mat-icon>
+          </button>
+        </div>
+        <div class="carousel-container">
+          <!-- CAROUSEL ELEMENT -->
+          <swiper-container autoplay="true" [loop]="loop" speed="1000" [slidesPerView]="slidesPer"
+            id="carousel-{{design.id}}">
+            <!-- SLIDES -->
+            @for(slide of design.imgs; track slide){
+            <swiper-slide>
+              <div class="img-container">
+                <img [src]="slide.img" alt="slide.img" class="img">
+              </div>
+            </swiper-slide>
+            }
+            <!-- END SLIDES -->
+          </swiper-container>
+          <!-- END CAROUSEL ELEMENT -->
+        </div>
+        <div class="next">
+          <button (click)="nextView(design.id)">
+            <mat-icon>keyboard_double_arrow_right</mat-icon>
           </button>
         </div>
       </div>
