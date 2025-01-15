@@ -13,11 +13,17 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  height: auto;
 }
 
 #txt {
   flex-direction: column;
   padding: 45px;
+}
+
+#txt-big {
+  flex-direction: column;
+  padding: 2%px;
 }
 
 .video {
@@ -83,7 +89,7 @@ span {
 
 .ajuste {
   justify-content: start;
-  padding: 0px 80px 80px 80px !important;
+  padding: 0px 50px 60px 50px !important;
 }
 
 @media only screen and (min-width: 200px) and (max-width: 749px) {
