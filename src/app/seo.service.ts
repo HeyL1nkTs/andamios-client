@@ -1,28 +1,27 @@
 import { Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { title } from 'process';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SeoService {
 
-  constructor(private meta:Meta, private title: Title) { }
+  constructor(private meta: Meta, private title: Title) { }
 
-  generateTags(config) {
-    config = {
-      title: "Andamios Atlas",
-      description: "Andamios Atlás, el mayor líder en renta y venta de andamios en el mercado.",
-      image: "",
-      slug: "",
-      ...config
-    }
-
-    this.meta.updateTag({name: config.title, content: config.description});
+  setTitle(title: string) {
+    this.title.setTitle(title);
   }
 
-  actualizarTitulo(titulo: string){
-    this.title.setTitle(titulo)
+  setOGTitle(title: string) {
+    this.meta.updateTag({ property: 'og:title', content: title });
+  }
+
+  setDescription(description: string) {
+    this.meta.updateTag({ name: 'description', content: description });
+  }
+
+  setKeywords(keywords: string[]) {
+    this.meta.updateTag({ name: 'keywords', content: keywords.join(',') });
   }
 
 }

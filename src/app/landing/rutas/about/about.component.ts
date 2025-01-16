@@ -13,12 +13,12 @@ import { SeoService } from '../../../seo.service';
 export class AboutComponent {
 
   constructor(private seo:SeoService) {
-    this.seo.actualizarTitulo("¿Quienes somos?");
-      this.seo.generateTags({
-        title: "¿Quienes somos?",
-        description: "Somos una empresa orgullosamente mexicana, nos hemos consolidado como el líder en renta y venta de andamios en el mercado.",
-        slug: "quienes-somos"
-      })
+    this.seo.setTitle("¿Quienes somos?");
+      this.seo.setKeywords([
+         "¿Quienes somos?",
+         "Somos una empresa orgullosamente mexicana, nos hemos consolidado como el líder en renta y venta de andamios en el mercado.",
+         "quienes-somos"
+      ])
     afterRender(() => {
       window.scrollTo(0, 0);
 

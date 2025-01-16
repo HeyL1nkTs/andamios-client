@@ -35,21 +35,21 @@ export class ProveeedoresComponent {
     this.loading = true;
     this.activatedRoute.paramMap.subscribe(params => {
       this.accion = params.get('seccion');
-      this.seo.actualizarTitulo("Proveedores | "+ this.accion.toUpperCase());
+      this.seo.setTitle("Proveedores | "+ this.accion.toUpperCase());
       if (this.accion === 'alta' || this.accion === 'efactura') {
         this.obtenerArchivo();
-        this.seo.generateTags({
-          title: "Proveedores | " + this.accion,
-          description: "Andamios Atlas pone disposición de sus proveedores los formatos necesarios para realizar trámites y gestiones con la empresa.",
-          slug: "proveedores/" + this.accion
-        })
+        this.seo.setKeywords([
+          "Proveedores | " + this.accion,
+          "Andamios Atlas pone disposición de sus proveedores los formatos necesarios para realizar trámites y gestiones con la empresa.",
+          "proveedores/" + this.accion
+        ])
       } else if (this.accion === 'comunicados') {
         this.obtenerComunicados();
-        this.seo.generateTags({
-          title: "Proveedores | Comunicados",
-          description: "Andamios Atlas pone disposición de sus proveedores los comunicados más recientes para mantenerlos informados de los cambios y noticias de la empresa.",
-          slug: "proveedores/comunicados"
-        })
+        this.seo.setKeywords([
+          "Proveedores | Comunicados",
+          "Andamios Atlas pone disposición de sus proveedores los comunicados más recientes para mantenerlos informados de los cambios y noticias de la empresa.",
+          "proveedores/comunicados"
+        ])
       }
       this.loading = false;
     })

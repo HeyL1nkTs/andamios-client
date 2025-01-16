@@ -16,12 +16,12 @@ export class AnticorrupcionComponent {
     afterRender(() => {
       window.scroll(0, 0);
     })
-    this.seo.actualizarTitulo('Aviso de anticorrupción')
-    this.seo.generateTags({
-      title: 'Aviso de anticorrupción',
-      description: 'Conoce las politicas de anticorrupción de Andamios Atlas',
-      slug: 'Aviso de anticorrupción'
-    })
+    this.seo.setTitle('Aviso de anticorrupción')
+    this.seo.setKeywords([
+      'Aviso de anticorrupción',
+      'Conoce las politicas de anticorrupción de Andamios Atlas',
+      'Aviso de anticorrupción'
+    ])
   }
 
 }
