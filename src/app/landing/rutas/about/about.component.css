@@ -23,7 +23,8 @@
 
 #txt-big {
   flex-direction: column;
-  padding: 2%px;
+  padding: 2%;
+  
 }
 
 .video {
