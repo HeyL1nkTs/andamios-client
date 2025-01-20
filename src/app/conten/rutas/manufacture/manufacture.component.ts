@@ -16,12 +16,12 @@ export class ManufactureComponent {
   constructor(private seo: SeoService, private router:Router) {
     afterRender(() => {
       window.scrollTo(0, 0);
-      this.seo.actualizarTitulo("test");
-      this.seo.generateTags({
-        title: "Andamios Atlas",
-        description: "Andamios Atlás, el mayor líder en renta y venta de andamios en el mercado.",
-        slug: "inicio"
-      })
+      this.seo.setTitle("test");
+      this.seo.setKeywords([
+        "Andamios Atlas",
+        "Andamios Atlás, el mayor líder en renta y venta de andamios en el mercado.",
+        "inicio"
+      ])
     })
   }
 

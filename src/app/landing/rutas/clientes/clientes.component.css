@@ -16,6 +16,9 @@
   margin: 40px auto 30px auto;
 }
 
+.ancho-min{
+  min-width: 80px;
+}
 .disclaimer{
   font-size: 22px;
   font-weight: 300;

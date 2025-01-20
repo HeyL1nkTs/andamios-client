@@ -16,12 +16,12 @@ export class PrivacidadComponent {
     afterRender(()=>{
       window.scrollTo(0,0)
     })
-    this.seo.actualizarTitulo('Aviso de privacidad')
-    this.seo.generateTags({
-      title: 'Politicas de privacidad',
-      description: 'Conoce las politicas de privacidad de Andamios Atlas',
-      slug: 'Politicas de privacidad'
-    })
+    this.seo.setTitle('Aviso de privacidad')
+    this.seo.setKeywords([
+      'Politicas de privacidad',
+      'Conoce las politicas de privacidad de Andamios Atlas',
+      'Politicas de privacidad'
+    ])
   }
 
 }

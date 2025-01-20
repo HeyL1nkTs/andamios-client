@@ -41,7 +41,7 @@ export class CategoriasComponent {
 
       this.andmiosService.obtenerTipoCategoria(params['url']).subscribe((data:Categoria) => {
         this.categoria = data
-        this.seo.actualizarTitulo(this.categoria.nombre)
+        this.seo.setTitle(this.categoria.nombre)
         const elemento = {
           tipo: this.categoria.tipo,
           id: this.categoria.id
@@ -51,9 +51,7 @@ export class CategoriasComponent {
 
           data.forEach((seccion:Seccion, index) => {
 
-            this.seo.generateTags({
-              title: this.categoria.nombre,
-            })
+            this.seo.setKeywords([ this.categoria.nombre])
 
             if(seccion.imagen_inicio){
               seccion.imagen_inicio = this.petitionService.sanitizar(seccion.imagen_inicio)

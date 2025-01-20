@@ -69,7 +69,7 @@
 
       <label for="" class="form-label">Escolaridad</label>
       <select name="" id="" formControlName="escolaridad" class="form-control">
-        <option value="">-- Escoge una opcion --</option>
+        <option value="">-- Escoge una opción --</option>
         <option value="Titulado">Titulado</option>
         <option value="Estudiante">Estudiante</option>
         <option value="Trunca">Trunca</option>
@@ -82,7 +82,7 @@
 
       <label for="" class="form-label">Área de interés</label>
       <select name="" id="" formControlName="area" class="form-control">
-        <option value="">-- Escoge una opcion --</option>
+        <option value="">-- Escoge una opción --</option>
         <option value="Finanzas">Finanzas</option>
         <option value="Operaciones">Operaciones</option>
         <option value="Comercial">Comercial</option>
@@ -96,7 +96,7 @@
       </div>
       }
 
-      <label for="" class="form-label">Correo Electronico</label>
+      <label for="" class="form-label">Correo electrónico</label>
       <input type="text" formControlName="email" class="form-control">
       @if(formulario.get('email').invalid && formulario.get('email').touched || email){
       <div class="error">
@@ -104,11 +104,11 @@
       </div>
       }
 
-      <label for="" class="form-label">Telefóno de contacto</label>
+      <label for="" class="form-label">Teléfono de contacto</label>
       <input type="text" formControlName="telefono" class="form-control">
       @if(formulario.get('telefono').invalid && formulario.get('telefono').touched || telefono){
       <div class="error">
-        Telefóno es requerido y solo admite numeros
+        Teléfono es requerido y solo admite numeros
       </div>
       }
 
@@ -123,15 +123,15 @@
       </div>
 
       <div class="mb-3 escala">
-        <label for="" class="form-label">Division</label>
+        <label for="" class="form-label">División</label>
         <select name="" id="" class="form-control" formControlName="division">
-          <option value="" disabled>-- Escoge una opcion --</option>
-          <option value="andamios">Division Andamios Atlas</option>
-          <option value="conten">Division Conten</option>
+          <option value="" disabled>-- Escoge una opcin --</option>
+          <option value="andamios">División Andamios Atlas</option>
+          <option value="conten">División Conten</option>
         </select>
         @if(formulario.get('division').invalid && formulario.get('division').touched || division){
         <div class="error">
-          Es importante seleccionar la division
+          Es importante seleccionar la división
         </div>
         }
       </div>

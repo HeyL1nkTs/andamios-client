@@ -26,12 +26,12 @@ export class ClientesComponent {
     })
     this.loading = true;
     this.obtenerArchivo()
-    this.seo.actualizarTitulo('Clientes');
-    this.seo.generateTags({
-      title:'Clientes',
-      description:'Andamios Atlas pone a su disposicion un portal para clientes donde podra descargar los archivos necesarios para realizar sus pedidos.',
-      slug:'clientes'
-    })
+    this.seo.setTitle('Clientes');
+    this.seo.setKeywords([
+      'Clientes',
+      'Andamios Atlas pone a su disposicion un portal para clientes donde podra descargar los archivos necesarios para realizar sus pedidos.',
+      'clientes'
+    ])
   }
 
   obtenerArchivo(){

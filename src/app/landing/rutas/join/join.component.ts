@@ -32,12 +32,12 @@ export class JoinComponent {
 
     
 
-    this.seo.actualizarTitulo('Unete al equipo')
-    this.seo.generateTags({
-      title: 'Unete al equipo',
-      description: 'Andamios Atlas pone a tu disposicion el formulario para crear una solicitud para unirse nuestro equipo de trabajo',
-      slugs:'Unete a la familia de Andamios Atlas'
-    })
+    this.seo.setTitle('Unete al equipo')
+    this.seo.setKeywords([
+      'Unete al equipo',
+      'Andamios Atlas pone a tu disposicion el formulario para crear una solicitud para unirse nuestro equipo de trabajo',
+      'Unete a la familia de Andamios Atlas'
+    ])
 
     this.formulario = this.fb.group({
       nombre: ['', [Validators.required]],

@@ -30,7 +30,7 @@ export class InicioComponent {
   constructor(private andamiosService: AndamiosService,
     private petitionsService: PetitionsService, private seo:SeoService) {
 
-      this.seo.actualizarTitulo("Andamios Atlas")
+      this.seo.setTitle("Andamios Atlas")
 
       this.loading = true;
       this.obtenerCarrusel()
@@ -93,10 +93,10 @@ export class InicioComponent {
         if(element.secciones.length > 0){
           element.secciones.forEach(seccion => {
             console.log(seccion.nombre)
-            this.seo.generateTags({
-              title: element.titulo,
-              description: seccion.nombre
-            })
+            this.seo.setKeywords([
+              element.titulo,
+              seccion.nombre
+            ])
           })
         }
       });
